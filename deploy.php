@@ -31,11 +31,11 @@ set('composer_action', false);
 
 
 
-task('post-deploy', function () {
+// task('post-deploy', function () {
 
-    run('sudo chown -R ex:www-data /var/www/ex');
-    run('sudo chmod -R u+rwx /var/www/ex');
-  });
+//     run('sudo chown -R ex:www-data /var/www/ex');
+//     run('sudo chmod -R u+rwx /var/www/ex');
+//   });
 
 
 // Tasks
@@ -51,7 +51,7 @@ task('deploy', [
     //'deploy:clear_paths',
     //'deploy:symlink',
     //'deploy:unlock',
-    'post-deploy',
+//     'post-deploy',
     'deploy:publish'
 
 ]);
@@ -61,6 +61,6 @@ task('delete_src_folder', function () {
     });
 
 // [Optional] If deploy fails automatically unlock.
-after('deploy', 'delete_src_folder');
+//after('deploy', 'delete_src_folder');
 
 after('deploy:failed', 'deploy:unlock');
