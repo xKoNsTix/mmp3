@@ -30,6 +30,7 @@ host('Lillesand')
 set('composer_action', false);
 
 
+// maybe needed on WP Config
 
 // task('post-deploy', function () {
 
@@ -61,6 +62,5 @@ task('delete_src_folder', function () {
     });
 
 // [Optional] If deploy fails automatically unlock.
-//after('deploy', 'delete_src_folder');
-
+after('deploy', 'delete_src_folder');
 after('deploy:failed', 'deploy:unlock');
